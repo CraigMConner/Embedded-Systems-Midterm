@@ -20,11 +20,12 @@ int convert(int button, int avg);
 void ADC_Init();
 
 // Retrieves the value from a given analog pin
-int getAnalog(int pin){
+int getAnalog(int pin)
+{
 	// Enables ADC
         ADCSRA |= (1 << ADEN);
 	// Clears out previous reading
-	ADMUX &= 0xF0;
+	ADMUX &= (0xF0);
 	// Chooses which analog pin to read from
 	ADMUX |= pin;
 	// Starts the conversion
@@ -37,7 +38,8 @@ int getAnalog(int pin){
 }
 
 // Sets up ADC functionality
-void ADC_Init(){	
+void ADC_Init()
+{	
 	// First three shifts are the Prescaler bits used for setting the clock frequency to 128 Hz
 	ADCSRA |=  (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0); 
 	// Sets the reference voltage to 1100 mV which is standard for temp sensing
@@ -56,7 +58,8 @@ void printMenu()
 }
 
 // Calls each TMP36 to read the temp in the room
-int getAvg() {
+int getAvg() 
+{
 	TMPa = getAnalog(TMPa);
 	// Delays implemented so they are not all reading at the same time. That woould cause interference
         _delay_ms(1000);
