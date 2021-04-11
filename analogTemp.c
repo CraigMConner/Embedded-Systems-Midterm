@@ -27,13 +27,14 @@ int getAnalog(int pin)
 	// Clears out previous reading
 	ADMUX &= (0xF0);
 	// Chooses which analog pin to read from
-	ADMUX |= pin;
+	ADMUX |= (pin);
 	// Starts the conversion
 	ADCSRA |= (1 << ADSC);
 	// Waits for the ADC to finish
 	while(ADCSRA & (1 << ADSC));
 	// Disable ADC to prevent interference
 	ADCSRA |= (0 << ADEN);
+	// Return ADC result
 	return ADCW; 
 }
 
