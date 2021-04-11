@@ -8,7 +8,7 @@ Included in the repository is the main C file "analogTemp.c" along with the LCD 
 
 === Instructions ===
 
-* Make sure that all files are in the same directory before using compile_script.py. Also appropriatly modify the script so that it reflects your computer's setting such as the port number. The final command that uploads the code to the board is different on Mac then Windows. I use a Mac so that's what is in the current script. If you have Windows you have to replace the last command with: "avrdude.exe -patmega328p -P(Port Name) -carduino -D -U flash:w:analogTemp.hex:i"
+* Make sure that all files are in the SAME DIRECTORY before using compile_script.py. Also appropriatly modify the script so that it reflects your computer's setting such as the port number. The final command that uploads the code to the board is different on Mac then Windows. I use a Mac so that's what is in the current script. If you have Windows you have to replace the last command with: "avrdude.exe -patmega328p -P(Port Name) -carduino -D -U flash:w:analogTemp.hex:i"
 
   - Then just run the command: python compile_script.py 4
 
